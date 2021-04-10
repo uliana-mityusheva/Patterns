@@ -1,136 +1,138 @@
 #include "MyPet.h"
+
 #include "Commands.h"
 #include "Print.h"
 
-MyPet::MyPet() : happiness(max_status), health(max_status), force(max_status), sleep(max_status),
-need_toilet(min_status), satiety(max_status) {
+
+MyPet::MyPet() : health(num.max_status), happiness(num.max_status), sleep(num.max_status), force(num.max_status),
+satiety(num.max_status), need_toilet(num.min_status) {
 }
 
+
 void MyPet::CheckStatus(int &status) {
-    if (status > max_status) {
-        status = max_status;
-    } else if (status < min_status) {
-        status = min_status;
+    if (status > num.max_status) {
+        status = num.max_status;
+    } else if (status < num.min_status) {
+        status = num.min_status;
     }
+}
+
+void MyPet::CheckAllStatus() {
+    CheckStatus(happiness);
+    CheckStatus(health);
+    CheckStatus(sleep);
+    CheckStatus(force);
+    CheckStatus(satiety);
+    CheckStatus(need_toilet);
 }
 
 void MyPet::Feed() {
     Print print;
     print.ChooseFood(name);
+
     Commands choice;
     std::string answer = choice.ChooseFood();
 
-    if (answer == "apple") {
+    if (answer == "apple") { //TODO подифицировать изменение параметров (Food, Toy)
         Apple food;
-        happiness += food.HappinessChange(max_status, min_status);
-        health += food.HealthChange(max_status, min_status);
-        need_toilet += food.NeedToiletChange(max_status, min_status);
-        satiety += food.SatietyChange(max_status, min_status);
-        force += food.ForceChange(max_status, min_status);
+        happiness += food.HappinessChange();
+        health += food.HealthChange();
+        need_toilet += food.NeedToiletChange();
+        satiety += food.SatietyChange();
+        force += food.ForceChange();
 
-        Print print;
         print.Apple(name);
     }
 
     if (answer == "poke") {
         Poke food;
-        happiness += food.HappinessChange(max_status, min_status);
-        health += food.HealthChange(max_status, min_status);
-        need_toilet += food.NeedToiletChange(max_status, min_status);
-        satiety += food.SatietyChange(max_status, min_status);
-        force += food.ForceChange(max_status, min_status);
+        happiness += food.HappinessChange();
+        health += food.HealthChange();
+        need_toilet += food.NeedToiletChange();
+        satiety += food.SatietyChange();
+        force += food.ForceChange();
 
-        Print print;
         print.Poke(name);
     }
 
     if (answer == "salad") {
         Salad food;
-        happiness += food.HappinessChange(max_status, min_status);
-        health += food.HealthChange(max_status, min_status);
-        need_toilet += food.NeedToiletChange(max_status, min_status);
-        satiety += food.SatietyChange(max_status, min_status);
-        force += food.ForceChange(max_status, min_status);
+        happiness += food.HappinessChange();
+        health += food.HealthChange();
+        need_toilet += food.NeedToiletChange();
+        satiety += food.SatietyChange();
+        force += food.ForceChange();
 
-        Print print;
         print.Salad(name);
     }
 
     if (answer == "hamburger") {
         Hamburger food;
-        happiness += food.HappinessChange(max_status, min_status);
-        health += food.HealthChange(max_status, min_status);
-        need_toilet += food.NeedToiletChange(max_status, min_status);
-        satiety += food.SatietyChange(max_status, min_status);
-        force += food.ForceChange(max_status, min_status);
+        happiness += food.HappinessChange();
+        health += food.HealthChange();
+        need_toilet += food.NeedToiletChange();
+        satiety += food.SatietyChange();
+        force += food.ForceChange();
 
-        Print print;
         print.Hamburger(name);
     }
 
     if (answer == "pancake") {
         Pancake food;
-        happiness += food.HappinessChange(max_status, min_status);
-        health += food.HealthChange(max_status, min_status);
-        need_toilet += food.NeedToiletChange(max_status, min_status);
-        satiety += food.SatietyChange(max_status, min_status);
-        force += food.ForceChange(max_status, min_status);
+        happiness += food.HappinessChange();
+        health += food.HealthChange();
+        need_toilet += food.NeedToiletChange();
+        satiety += food.SatietyChange();
+        force += food.ForceChange();
 
-        Print print;
         print.Pancake(name);
     }
 
     if (answer == "chips") {
        Chips food;
-       happiness += food.HappinessChange(max_status, min_status);
-       health += food.HealthChange(max_status, min_status);
-       need_toilet += food.NeedToiletChange(max_status, min_status);
-       satiety += food.SatietyChange(max_status, min_status);
-       force += food.ForceChange(max_status, min_status);
+       happiness += food.HappinessChange();
+       health += food.HealthChange();
+       need_toilet += food.NeedToiletChange();
+       satiety += food.SatietyChange();
+       force += food.ForceChange();
 
-        Print print;
-        print.Chips(name);
+       print.Chips(name);
     }
 
-    CheckStatus(happiness);
-    CheckStatus(health);
-    CheckStatus(satiety);
-    CheckStatus(need_toilet);
-    CheckStatus(force);
+    CheckAllStatus();
 }
 
 void MyPet::GoToilet() {
-    need_toilet = min_status;
+    need_toilet = num.min_status;
 
     Print print;
     print.Toilet(name);
 }
 
 void MyPet::GoSleep() {
-    force += 5 * max_status / 10;
-    CheckStatus(force);
+    force += num.fifty_percent;
+    CheckAllStatus();
 
-    sleep = max_status;
+    sleep = num.max_status;
+
     Print print;
     print.GoSleep(name);
 }
 
 void MyPet::Sport() {
-    Print print;
-    if (force > 5 * max_status / 10) {
-        force += -5 * max_status / 10;
-        health += 4 * max_status / 10;
-        sleep += -3 * max_status / 10;
-        satiety += -3 * max_status / 10;
+    if (force > num.fifty_percent) {
+        force += -num.fifty_percent;
+        health += num.forty_percent;
+        sleep += -num.thirty_percent;
+        satiety += -num.thirty_percent;
 
-        CheckStatus(force);
-        CheckStatus(health);
-        CheckStatus(health);
-        CheckStatus(sleep);
-        CheckStatus(satiety);
+        CheckAllStatus();
 
+        Print print;
         print.Sport(name);
     } else {
+
+        Print print;
         print.ForceToSport(name);
     }
 }
@@ -138,64 +140,61 @@ void MyPet::Sport() {
 void MyPet::Play() {
     Print print;
     print.ChooseToy(name);
+
     Commands choice;
     std::string answer = choice.ChooseToy();
 
     if (answer == "computer") {
         ComputerGame toy;
 
-        happiness += toy.happiness_change(max_status, min_status);
-        force += toy.force_change(max_status, min_status);
-        health += toy.healthy_change(max_status, min_status);
-        sleep += toy.sleep_change(max_status, min_status);
-        satiety += toy.satiety_change(max_status, min_status);
+        happiness += toy.happiness_change();
+        force += toy.force_change();
+        health += toy.healthy_change();
+        sleep += toy.sleep_change();
+        satiety += toy.satiety_change();
 
-        Print print;
         print.Computer(name);
     }
 
     if (answer == "puzzle") {
         Puzzle toy;
 
-        happiness += toy.happiness_change(max_status, min_status);
-        force += toy.force_change(max_status, min_status);
-        sleep += toy.sleep_change(max_status, min_status);
-        satiety += toy.satiety_change(max_status, min_status);
+        happiness += toy.happiness_change();
+        force += toy.force_change();
+        sleep += toy.sleep_change();
+        satiety += toy.satiety_change();
 
-        Print print;
         print.Puzzle(name);
     }
 
     if (answer == "ball") {
         Ball toy;
-        happiness += toy.happiness_change(max_status, min_status);
-        force += toy.force_change(max_status, min_status);
-        health += toy.healthy_change(max_status, min_status);
-        sleep += toy.sleep_change(max_status, min_status);
-        satiety += toy.satiety_change(max_status, min_status);
+        happiness += toy.happiness_change();
+        force += toy.force_change();
+        health += toy.healthy_change();
+        sleep += toy.sleep_change();
+        satiety += toy.satiety_change();
 
-        Print print;
         print.Ball(name);
     }
 
-    CheckStatus(happiness);
-    CheckStatus(health);
-    CheckStatus(sleep);
-    CheckStatus(force);
-    CheckStatus(satiety);
+    CheckAllStatus();
 }
 
 void MyPet::Treatment() {
-    Print print;
-    if (sleep > 3 * max_status / 10 && force > 2 * max_status) {
-        health = max_status;
+    if (sleep > num.thirty_percent && force > num.twenty_percent) {
+        health = num.max_status;
+
+        Print print;
         print.Treatment(name);
     } else {
-        if (sleep <= 3 * max_status) {
+        if (sleep <= num.thirty_percent) {
+            Print print;
             print.SleepToTreatment(name);
         }
 
-        if (force <= 2 * max_status) {
+        if (force <= num.twenty_percent) {
+            Print print;
             print.ForceToTreatment(name);
         }
     }
@@ -203,53 +202,53 @@ void MyPet::Treatment() {
 
 
 std::string MyPet::CheckAlive() {
-    happiness -= 1;
-    health -= 1;
-    if (health == min_status && happiness == min_status && force == min_status
-    && sleep == min_status && satiety == min_status ) {
-        return "died";
-    } else {
-        Print print;
-        if (health < 3 * max_status / 10) {
-            print.Sick(name);
-        }
-        if (need_toilet > 8 * max_status / 10) {
-            print.NeedToilet(name);
-        }
-        if (happiness < 4 * max_status / 10) {
-            print.Boring(name);
-        }
-        if (satiety < 2 * max_status / 10) {
-            print.Hungry(name);
-        }
-        if (sleep < 3 * max_status / 10) {
-            print.Sleep(name);
-        }
-        if (force < 2 * max_status / 10) {
-            print.Tired(name);
-        }
-        return "ok";
-    }
-}
-
-void MyPet::PrintParameters() const{
+    happiness -= num.ten_percent;
+    health -= num.ten_percent;
+    CheckAllStatus();
     Print print;
 
+    if (health == num.min_status || happiness == num.min_status && force == num.min_status
+    && sleep == num.min_status || satiety == num.min_status ) {
+        return "died";
+    }
+    if (health < num.thirty_percent) {
+        print.Sick(name);
+    }
+    if (need_toilet > num.eighty_percent) {
+        print.GoToilet(name);
+    }
+    if (happiness < num.forty_percent) {
+        print.Boring(name);
+    }
+    if (satiety < num.twenty_percent) {
+        print.Hungry(name);
+    }
+    if (sleep < num.thirty_percent) {
+        print.Sleep(name);
+    }
+    if (force < num.twenty_percent) {
+        print.Tired(name);
+    }
+    return "ok";
+}
+
+void MyPet::PrintParameters() {
+    Print print;
     print.PrintForce();
-    print.PrintParameter(force, max_status);
+    print.PrintParameter(force);
 
     print.PrintSatiety();
-    print.PrintParameter(satiety, max_status);
+    print.PrintParameter(satiety);
 
     print.PrintHealth();
-    print.PrintParameter(health, max_status);
+    print.PrintParameter(health);
 
     print.PrintHappiness();
-    print.PrintParameter(happiness, max_status);
+    print.PrintParameter(happiness);
 
     print.PrintSleep();
-    print.PrintParameter(sleep, max_status);
+    print.PrintParameter(sleep);
 
     print.PrintNeedToilet();
-    print.PrintParameter(need_toilet, max_status);
+    print.PrintParameter(need_toilet);
 }

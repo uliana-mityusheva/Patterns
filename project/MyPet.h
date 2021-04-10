@@ -1,15 +1,25 @@
 #pragma once
 
 #include <iostream>
-#include "Food.h"
-#include "Toy.h"
-#include "Print.h"
+
+#include "Food/Apple.h"
+#include "Food/Pancake.h"
+#include "Food/Salad.h"
+#include "Food/Poke.h"
+#include "Food/Hamburger.h"
+#include "Food/Chips.h"
+
+#include "Toy/ComputerGame.h"
+#include "Toy/Puzzle.h"
+#include "Toy/Ball.h"
+
+#include "MathConstants.h"
+#include "StringConstants.h"
+
 
 class MyPet{
 protected:
-    int const max_status = 10;
-    int const min_status = 0;
-
+    MathConstants num;
     int health;
     int happiness;
     int sleep;
@@ -17,7 +27,9 @@ protected:
     int force;
     int need_toilet;
 
+
     void CheckStatus(int &status);
+    void CheckAllStatus();
 public:
     std::string name;
 
@@ -30,6 +42,5 @@ public:
     void GoToilet();
     void Sport();
     void Treatment();
-    void PrintParameters() const;
-
+    void PrintParameters();
 };

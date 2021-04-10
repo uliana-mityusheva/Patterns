@@ -1,171 +1,189 @@
 #include "Print.h"
 
+Print::Print() {
+    table.push_back(str.zero);
+    table.push_back(str.one);
+    table.push_back(str.two);
+    table.push_back(str.three);
+    table.push_back(str.four);
+    table.push_back(str.five);
+    table.push_back(str.six);
+    table.push_back(str.seven);
+    table.push_back(str.eight);
+    table.push_back(str.nine);
+    table.push_back(str.ten);
+}
+
+int Print::Number(int parameter) {
+    int ans = 0;
+    if (parameter == num.min_status) {
+        ans = 0;
+    } else if (parameter == num.min_status + num.ten_percent) {
+        ans = 1;
+    } else if (parameter == num.min_status + num.twenty_percent) {
+        ans = 2;
+    } else if (parameter == num.min_status + num.thirty_percent) {
+        ans = 3;
+    } else if (parameter == num.min_status + num.forty_percent) {
+        ans = 4;
+    } else if (parameter == num.min_status + num.fifty_percent) {
+        ans = 5;
+    } else if (parameter == num.min_status + num.sixty_percent) {
+        ans = 6;
+    } else if (parameter == num.min_status + num.seventy_percent) {
+        ans = 7;
+    } else if (parameter == num.min_status + num.eighty_percent) {
+        ans = 8;
+    } else if (parameter == num.min_status + num.ninety_percent) {
+        ans = 9;
+    } else if (parameter == num.max_status) {
+        ans = 10;
+    }
+    return ans;
+}
+
 void Print::Hello() {
-    std::cout << "Hello, let's start the game!\n" << "Come up with a name for your pet\n";
+    print.output_one(str.hello);
 }
 
 void Print::Start(std::string name) {
-    std::cout << "Ok, now you can play with " << name << "\n";
+    print.output_three(str.start, name, str.line_break);
 }
 
 void Print::ChooseFood(std::string name) {
-    std::cout << "Choose meal for " << name << "\n";
-    std::cout << "apple\tpoke\tpancake\tchips\tsalad\thamburger\n";
+    print.output_three(str.choose_meal, name, str.line_break);
+    print.output_one(str.meal);
 }
 
 void Print::ChooseToy(std::string name) {
-    std::cout << "Choose toy for " << name << "\n";
-    std::cout << "ball\tcomputer\tpuzzle\n";
+    print.output_three(str.choose_toy, name, str.line_break);
+    print.output_one(str.toys);
 }
 
 void Print::Error() {
-    std::cout << "Wrong command\n";
+    print.output_one(str.error);
 }
 
-void Print::PrintParameter(int parameter, int max) {
-    if (parameter == 0) {
-        std::cout << zero;
-    } else if (parameter == 1 * max / 10) {
-        std::cout << one;
-    } else if (parameter == 2 * max / 10) {
-        std::cout << two;
-    } else if (parameter == 3 * max / 10) {
-        std::cout << three;
-    } else if (parameter == 4 * max / 10) {
-        std::cout << four;
-    } else if (parameter == 5 * max / 10) {
-        std::cout << five;
-    } else if (parameter == 6 * max / 10) {
-        std::cout << six;
-    } else if (parameter == 7 * max / 10) {
-        std::cout << seven;
-    } else if (parameter == 8 * max / 10) {
-        std::cout << eight;
-    } else if (parameter == 9 * max / 10) {
-        std::cout << nine;
-    } else if (parameter == max){
-        std::cout << ten;
-    } else {
-        std::cout << "error";
-    }
+void Print::PrintParameter(int parameter) {
+    print.output_one(table[Number(parameter)]);
 }
 
 void Print::PrintForce() {
-    std::cout << "Force:       ";
+    print.output_one(str.force);
 }
 
 void Print::PrintHappiness() {
-    std::cout << "Happiness:   ";
+    print.output_one(str.happiness);
 }
 
 void Print::PrintHealth() {
-    std::cout <<"Health:      ";
+    print.output_one(str.health);
 }
 
 void Print::PrintSatiety() {
-    std::cout << "Satiety:     ";
+    print.output_one(str.satiety);
 }
 
 void Print::PrintNeedToilet() {
-    std::cout << "Need toilet: ";
+    print.output_one(str.need_toilet);
 }
 
 void Print::PrintSleep() {
-    std::cout << "Sleep:       ";
+    print.output_one(str.sleep);
 }
 
 void Print::ForceToSport(std::string name) {
-    std::cout << name << " doesn't have enough forces to play sports\n";
+    print.output_two(name, str.force_to_sport);
 }
 
 void Print::ForceToTreatment(std::string name) {
-    std::cout << name << " need more forces to treatment\n";
+    print.output_two(name, str.force_to_treatment);
 }
 
 void Print::SleepToTreatment(std::string name) {
-    std::cout << name << " need more sleep to treatment\n";
+    print.output_two(name, str.sleep_to_treatment);
 }
 
 void Print::Died(std::string name) {
-    std::cout << "Unfortunately " << name << " died :(\n";
+    print.output_three(str.unfortunately, name, str.died);
 }
 
 void Print::End() {
-    std::cout << "Thanks for playing\n";
+    print.output_one(str.end);
 }
 
 void Print::Sick(std::string name) {
-    std::cout << name << " is sick\n";
+    print.output_two(name, str.sick);
 }
 
-void Print::NeedToilet(std::string name) {
-    std::cout << name << " needs to go to the toilet\n";
+void Print::GoToilet(std::string name) {
+    print.output_two(name, str.go_toilet);
 }
 
 void Print::Boring(std::string name){
-    std::cout << name << " is bored\n";
+    print.output_two(name, str.boring);
 }
 
 void Print::Hungry(std::string name) {
-    std::cout << name << " is hungry\n";
+    print.output_two(name, str.hungry);
 }
 
 void Print::Sleep(std::string name) {
-    std::cout << name << " wants to sleep\n";
+    print.output_two(name, str.want_to_sleep);
 }
 
 void Print::Tired(std::string name) {
-    std::cout << name << " is tired\n";
+    print.output_two(name, str.tired);
 }
 
 void Print::Computer(std::string name) {
-    std::cout << name << " played a computer game\n";
+    print.output_two(name, str.computer);
 }
 
 void Print::Ball(std::string name) {
-    std::cout << name << " played a ball\n";
+    print.output_two(name, str.ball);
 }
 
 void Print::Puzzle(std::string name) {
-    std::cout << name << " played a puzzle\n";
+    print.output_two(name, str.puzzle);
 }
 
 void Print::Apple(std::string name) {
-    std::cout << name << " ate the apple\n";
+    print.output_two(name, str.apple);
 }
 
 void Print::Poke(std::string name) {
-    std::cout << name << " ate the poke\n";
+    print.output_two(name, str.poke);
 }
 
 void Print::Chips(std::string name) {
-    std::cout << name << " ate the chips\n";
+    print.output_two(name, str.chips);
 }
 
 void Print::Hamburger(std::string name) {
-    std::cout << name << " ate the hamburger\n";
+    print.output_two(name, str.hamburger);
 }
 
 void Print::Pancake(std::string name) {
-    std::cout << name << " ate the pancake\n";
+    print.output_two(name, str.pancake);
 }
 
 void Print::Salad(std::string name) {
-    std::cout << name << " ate the salad\n";
+    print.output_two(name, str.salad);
 }
 
 void Print::Toilet(std::string name) {
-    std::cout << name << " went to the toilet\n";
+    print.output_two(name, str.toilet);
 }
 
 void Print::GoSleep(std::string name) {
-    std::cout << name << " slept\n";
+    print.output_two(name, str.go_sleep);
 }
 
 void Print::Treatment(std::string name) {
-    std::cout << name << " recovered\n";
+    print.output_two(name, str.treatment);
 }
 
 void Print::Sport(std::string name) {
-    std::cout << name << " did some sports\n";
+    print.output_two(name, str.sport);
 }

@@ -1,29 +1,34 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <vector>
+
+#include "Publish.h"
 #include "MyPet.h"
+
 
 class Print {
 private:
-    const std::string zero = "| | | | | | | | | | |\n";
-    const std::string one = "|*| | | | | | | | | |\n";
-    const std::string two = "|*|*| | | | | | | | |\n";
-    const std::string three = "|*|*|*| | | | | | | |\n";
-    const std::string four = "|*|*|*|*| | | | | | |\n";
-    const std::string five = "|*|*|*|*|*| | | | | |\n";
-    const std::string six = "|*|*|*|*|*|*| | | | |\n";
-    const std::string seven = "|*|*|*|*|*|*|*| | | |\n";
-    const std::string eight = "|*|*|*|*|*|*|*|*| | |\n";
-    const std::string nine = "|*|*|*|*|*|*|*|*|*| |\n";
-    const std::string ten = "|*|*|*|*|*|*|*|*|*|*|\n";
+    MathConstants num;
+    StringConstants str;
+    Publish print;
+
+    int Number(int parameter);
+
+    std::vector<std::string> table; /* = {str.zero, str.one, str.two, str.three, str.four,
+                                           str.five, str.six, str.seven, str.eight, str.nine, str.ten};
+                                           */
 public:
+    Print();
+
     void Hello();
     void Start(std::string name);
     void ChooseFood(std::string name);
     void ChooseToy(std::string name);
     void Error();
 
-    void PrintParameter(int parameter, int max);
+    void PrintParameter(int parameter);
 
     void PrintHappiness();
     void PrintSleep();
@@ -39,7 +44,7 @@ public:
     void End();
 
     void Sick(std::string name);
-    void NeedToilet(std::string name);
+    void GoToilet(std::string name);
     void Boring(std::string name);
     void Hungry(std::string name);
     void Sleep(std::string name);
@@ -61,6 +66,3 @@ public:
     void Treatment(std::string name);
     void GoSleep(std::string name);
 };
-
-
-
