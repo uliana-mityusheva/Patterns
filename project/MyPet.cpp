@@ -200,17 +200,17 @@ void MyPet::Treatment() {
     }
 }
 
-
-std::string MyPet::CheckAlive() {
+void MyPet::CheckAlive() {
     happiness -= num.ten_percent;
     health -= num.ten_percent;
+    satiety -= num.ten_percent;
+    need_toilet += num.ten_percent;
+    sleep -= num.ten_percent;
+
     CheckAllStatus();
+
     Print print;
 
-    if (health == num.min_status || happiness == num.min_status && force == num.min_status
-    && sleep == num.min_status || satiety == num.min_status ) {
-        return "died";
-    }
     if (health < num.thirty_percent) {
         print.Sick(name);
     }
@@ -228,6 +228,16 @@ std::string MyPet::CheckAlive() {
     }
     if (force < num.twenty_percent) {
         print.Tired(name);
+    }
+    
+}
+
+std::string MyPet::CheckStatus() {
+    CheckAllStatus();
+
+    if (health == num.min_status || happiness == num.min_status && force == num.min_status
+                                    && sleep == num.min_status || satiety == num.min_status ) {
+        return "died";
     }
     return "ok";
 }

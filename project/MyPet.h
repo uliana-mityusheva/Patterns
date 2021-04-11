@@ -30,11 +30,14 @@ protected:
 
     void CheckStatus(int &status);
     void CheckAllStatus();
+
 public:
     std::string name;
 
     MyPet();
-    std::string CheckAlive();
+
+    std::string CheckStatus();
+    void CheckAlive();
 
     void Feed();
     void GoSleep();
@@ -43,4 +46,5 @@ public:
     void Sport();
     void Treatment();
     void PrintParameters();
+
 };

@@ -2,6 +2,8 @@
 #include "MyPet.h"
 #include "Commands.h"
 #include "Print.h"
+#include "Timer.h"
+
 
 int main() {
     Print print;
@@ -11,12 +13,14 @@ int main() {
     pet.name = command.ReadName();
     print.Start(pet.name);
 
+
     std::string status = "ok";
     std::string read = "ok";
+
     do {
         read = command.Read(pet);
-
-        status = pet.CheckAlive();
+        pet.CheckAlive();
+        status = pet.CheckStatus();
     } while (read != "exit" && status != "died");
 
     if (status == "died") {

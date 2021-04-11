@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="project"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/iu/Patterns/project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/iu/Patterns/project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/iu/Patterns/project/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project">
+				<Option output="/Users/iu/Patterns/project/cmake-build-debug/project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/iu/Patterns/project/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="project/fast">
+				<Option output="/Users/iu/Patterns/project/cmake-build-debug/project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/iu/Patterns/project/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/iu/Patterns/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/iu/Patterns/project/Commands.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Commands.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Apple.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Apple.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Chips.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Chips.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Food.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Hamburger.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Hamburger.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Pancake.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Pancake.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Poke.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Poke.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Salad.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Food/Salad.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/MathConstants.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/MyPet.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/MyPet.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Print.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Print.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Publish.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Publish.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Reader.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Reader.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/StringConstants.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Timer.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Timer.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/Ball.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/Ball.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/ComputerGame.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/ComputerGame.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/Puzzle.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/Puzzle.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/Toy/Toy.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/main.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/Users/iu/Patterns/project/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
