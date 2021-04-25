@@ -16,7 +16,6 @@
 #include "MathConstants.h"
 #include "StringConstants.h"
 
-
 class MyPet{
 protected:
     MathConstants num;
@@ -27,7 +26,6 @@ protected:
     int satiety;
     int force;
     int need_toilet;
-
 
     void CheckStatus(int &status);
     void CheckAllStatus();

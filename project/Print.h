@@ -8,7 +8,6 @@
 #include "Publish.h"
 #include "MyPet.h"
 
-
 class Print {
 private:
     MathConstants num;

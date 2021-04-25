@@ -3,7 +3,6 @@
 #include "Commands.h"
 #include "Print.h"
 
-
 int main() {
     Print print;
     print.Hello();

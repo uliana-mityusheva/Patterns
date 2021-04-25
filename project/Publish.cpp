@@ -1,6 +1,5 @@
 #include "Publish.h"
 
-
 void Publish::output_one(std::string one) {
     std::cout << one;
     std::cout.flush();
