@@ -54,4 +54,11 @@ struct StringConstants {
     const std::string treatment = " recovered\n";
     const std::string sport = " did some sports\n";
     const std::string line_break = "\n";
+    const std::string stage = "# ";
+    const std::string process_eat = " is eating: ";
+    const std::string process_toilet = " in toilet: ";
+    const std::string process_sport = " is playing sports: ";
+    const std::string process_play= " is playing: ";
+    const std::string process_sleep = " is sleeping: ";
+    const std::string process_treatment = " is recovering: ";
 };

@@ -20,6 +20,7 @@
 class MyPet{
 protected:
     MathConstants num;
+    StringConstants str;
     int health;
     int happiness;
     int sleep;

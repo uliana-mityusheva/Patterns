@@ -1,0 +1,6 @@
+.DS_Store
+project/cmake-build-debug/*
+project/project
+project/.idea/*
+pattern1/*
+project0/*

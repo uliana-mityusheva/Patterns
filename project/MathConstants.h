@@ -13,4 +13,6 @@ struct MathConstants{
     const int seventy_percent =  7 * (max_status - min_status) /10;
     const int eighty_percent =  8 * (max_status - min_status) / 10;
     const int ninety_percent =  9 * (max_status - min_status) / 10;
+
+    const int time = 5;
 };

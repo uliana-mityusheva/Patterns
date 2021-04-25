@@ -187,3 +187,24 @@ void Print::Treatment(std::string name) {
 void Print::Sport(std::string name) {
     print.output_two(name, str.sport);
 }
+
+void Print::Clock() {
+    sleep(1);
+    print.output_one(str.stage);
+}
+void Print::Process(std::string name, std::string string) {
+    int moment = 0;
+    MathConstants num;
+    print.output_two(name, string);
+    sleep(1);
+    while (moment < num.time) {
+        //Clock();
+        print.output_one(str.stage);
+        //std::cout.flush();
+        sleep(1);
+        ++moment;
+    }
+    print.output_one(str.line_break);
+}
+
+

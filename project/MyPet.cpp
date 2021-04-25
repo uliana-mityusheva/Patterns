@@ -41,6 +41,7 @@ void MyPet::Feed() {
         satiety += food.SatietyChange();
         force += food.ForceChange();
 
+        print.Process(name, str.process_eat);
         print.Apple(name);
     }
 
@@ -52,6 +53,7 @@ void MyPet::Feed() {
         satiety += food.SatietyChange();
         force += food.ForceChange();
 
+        print.Process(name, str.process_eat);
         print.Poke(name);
     }
 
@@ -63,6 +65,7 @@ void MyPet::Feed() {
         satiety += food.SatietyChange();
         force += food.ForceChange();
 
+        print.Process(name, str.process_eat);
         print.Salad(name);
     }
 
@@ -74,6 +77,7 @@ void MyPet::Feed() {
         satiety += food.SatietyChange();
         force += food.ForceChange();
 
+        print.Process(name, str.process_eat);
         print.Hamburger(name);
     }
 
@@ -85,6 +89,7 @@ void MyPet::Feed() {
         satiety += food.SatietyChange();
         force += food.ForceChange();
 
+        print.Process(name, str.process_eat);
         print.Pancake(name);
     }
 
@@ -96,6 +101,7 @@ void MyPet::Feed() {
        satiety += food.SatietyChange();
        force += food.ForceChange();
 
+       print.Process(name, str.process_eat);
        print.Chips(name);
     }
 
@@ -103,9 +109,10 @@ void MyPet::Feed() {
 }
 
 void MyPet::GoToilet() {
+    Print print;
+    print.Process(name, str.process_toilet);
     need_toilet = num.min_status;
 
-    Print print;
     print.Toilet(name);
 }
 
@@ -116,6 +123,7 @@ void MyPet::GoSleep() {
     sleep = num.max_status;
 
     Print print;
+    print.Process(name, str.process_sleep);
     print.GoSleep(name);
 }
 
@@ -129,6 +137,7 @@ void MyPet::Sport() {
         CheckAllStatus();
 
         Print print;
+        print.Process(name, str.process_sport);
         print.Sport(name);
     } else {
 
@@ -153,6 +162,7 @@ void MyPet::Play() {
         sleep += toy.sleep_change();
         satiety += toy.satiety_change();
 
+        print.Process(name, str.process_play);
         print.Computer(name);
     }
 
@@ -164,6 +174,7 @@ void MyPet::Play() {
         sleep += toy.sleep_change();
         satiety += toy.satiety_change();
 
+        print.Process(name, str.process_play);
         print.Puzzle(name);
     }
 
@@ -175,6 +186,7 @@ void MyPet::Play() {
         sleep += toy.sleep_change();
         satiety += toy.satiety_change();
 
+        print.Process(name, str.process_play);
         print.Ball(name);
     }
 
@@ -186,6 +198,7 @@ void MyPet::Treatment() {
         health = num.max_status;
 
         Print print;
+        print.Process(name, str.process_treatment);
         print.Treatment(name);
     } else {
         if (sleep <= num.thirty_percent) {
@@ -229,7 +242,6 @@ void MyPet::CheckAlive() {
     if (force < num.twenty_percent) {
         print.Tired(name);
     }
-    
 }
 
 std::string MyPet::CheckStatus() {

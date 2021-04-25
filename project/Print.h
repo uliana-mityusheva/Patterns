@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <unistd.h>
 #include <vector>
 
 #include "Publish.h"
@@ -16,9 +17,8 @@ private:
 
     int Number(int parameter);
 
-    std::vector<std::string> table; /* = {str.zero, str.one, str.two, str.three, str.four,
-                                           str.five, str.six, str.seven, str.eight, str.nine, str.ten};
-                                           */
+    std::vector<std::string> table;
+
 public:
     Print();
 
@@ -65,4 +65,6 @@ public:
     void Sport(std::string name);
     void Treatment(std::string name);
     void GoSleep(std::string name);
+    void Process(std::string name, std::string str);
+    void Clock();
 };
