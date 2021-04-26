@@ -229,7 +229,7 @@ void MyPet::CheckAlive() {
     if (force < num.twenty_percent) {
         print.Tired(name);
     }
-    
+
 }
 
 std::string MyPet::CheckStatus() {
